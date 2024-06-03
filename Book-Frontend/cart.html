@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Book Store - Add to Cart</title>
+  <link rel="stylesheet" href="css/cart.css">
+
+  
+</head>
+
+<body>
+
+  <h1>Preloved Reads</h1>
+  <h2>Add to Cart</h2>
+
+  <!-- Book Information (Replace with dynamic data from your backend) -->
+  <div class="book-details">
+    <img id="book-image" src="" alt="Book Cover">
+    <h3 id="book-title">Book Title</h3>
+    <p id="book-author">Author: Author Name</p>
+    <p id="book-price">Price: $19.99</p>
+    <!-- Add any other book information you want to display -->
+  </div>
+
+  <!-- Add to Cart Form -->
+  <form id="add-to-cart-form">
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" value="1">
+    <button type="submit">Add to Cart</button>
+  </form>
+
+  <!-- Number of items in this cart -->
+  <div id="number-cart">
+    Number of items in this cart: <span id="books-in-cart">0</span>
+  </div>
+
+
+  <!-- Display Success Message (Hidden by default) -->
+  <div id="success-message" style="display: none;">
+    <p>Book added to cart successfully!</p>
+  </div>
+
+  <!-- Display Error Message (Hidden by default) -->
+  <div id="error-message" style="display: none;">
+    <p>Failed to add the book to cart. Please try again later.</p>
+  </div>
+
+  <!-- Add your JavaScript code here to handle form submission and cart management -->
+  <script>
+    // Get references to the form and message elements
+    const addToCartForm = document.getElementById("add-to-cart-form");
+    const successMessage = document.getElementById("success-message");
+    const errorMessage = document.getElementById("error-message");
+
+    // Add event listener to the form for form submission handling
+    addToCartForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission behavior
+
+      // Get the quantity from the input field
+      const quantity = parseInt(document.getElementById("quantity").value);
+
+      const cartData = {
+        quantity: quantity,
+        book_isbn: window.bookId
+      }
+
+      const url = 'http://localhost:5000/books/add-to-cart';
+
+      const bearerToken = localStorage.getItem("access_token")
+      const headers = new Headers();
+      headers.append('Authorization', `Bearer ${bearerToken}`);
+      headers.append('Content-Type', 'application/json');
+
+      async function addToCart() {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(cartData),
+          });
+
+          const data = await response.json();
+
+          successMessage.innerText = data.message
+          successMessage.style.display = "block"
+          addToCartForm.style.display = "none";
+          addToCartForm.reset()
+
+          setTimeout(function () {
+            // Show the success message and hide the form
+            successMessage.style.display = "none";
+            addToCartForm.style.display = "block";
+          }, 1000);
+
+          if (data.success) {
+            window.location.reload()
+          }
+
+        } catch (error) {
+          // Handle any errors that occurred during the fetch process
+          console.error('Fetch error:', error);
+        }
+      }
+      addToCart()
+
+      // Simulate a server delay (remove this in the actual implementation)
+    });
+
+  </script>
+
+  <script>
+    async function fetchCart() {
+      const booksInCart = document.getElementById("books-in-cart")
+
+      const url = 'http://localhost:5000/books/get-cart';
+
+      const queryParams = new URLSearchParams({ isbn: bookId });
+      const urlWithParams = `${url}?${queryParams}`;
+
+      const bearerToken = localStorage.getItem("access_token")
+      const headers = new Headers();
+      headers.append('Authorization', `Bearer ${bearerToken}`);
+      headers.append('Content-Type', 'application/json');
+
+      try {
+        const response = await fetch(urlWithParams, {
+          method: 'GET',
+          headers: headers,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          booksInCart.innerText = data.data.quantity
+        }
+      } catch (error) {
+        // Handle any errors that occurred during the fetch process
+        console.error('Fetch error:', error);
+      }
+    }
+  </script>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const bookId = urlParams.get("book-id");
+    const bookTitle = document.getElementById("book-title")
+    const bookAuthor = document.getElementById("book-author")
+    const bookPrice = document.getElementById("book-price")
+    const bookImage = document.getElementById("book-image")
+
+    if (bookId) {
+      const url = 'http://localhost:5000/books/details';
+      const queryParams = new URLSearchParams({ isbn: bookId });
+      const urlWithParams = `${url}?${queryParams}`;
+
+      const headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      // Perform the POST request using fetch
+      async function fetchBook() {
+        try {
+          const response = await fetch(urlWithParams, {
+            method: 'GET',
+            headers: headers,
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            bookImage.src = data.data.image_url
+            bookTitle.innerText = data.data.name
+            bookAuthor.innerText = data.data.author_name
+            bookPrice.innerText = data.data.price
+
+            window.bookId = data.data.isbn
+          }
+        } catch (error) {
+          // Handle any errors that occurred during the fetch process
+          console.error('Fetch error:', error);
+        }
+      }
+
+
+      Promise.all([fetchBook(), fetchCart()])
+        .then(() => {
+          // console.log("Both fetch requests completed.");
+        })
+        .catch((error) => {
+          console.error("Error in fetching:", error);
+        });
+    }
+  </script>
+
+
+  <script>
+
+    // Perform the POST request using fetch
+  </script>
+
+
+</body>
+
+</html>

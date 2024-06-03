@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login|Register</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/e71f889170.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- FOR LOGIN -->
+    <div class="container">
+
+        <div class="form-box">
+            <h1>Sign Up</h1>
+            <form id="register-form">
+                <!-- <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="firstname" type="text" placeholder="First Name" required>
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input id="lastname" type="text" placeholder="Last Name" required>
+                </div> -->
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input id="email" type="email" placeholder="Email" required>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input id='password' type="password" placeholder="Password" required>
+                    </div>
+                    <p>Forget Password <a href="#">Click Here!</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="submit">Register</button>
+                </div>
+
+                <div class="sign_in">
+                    Already got an account? <a href="login.html">Sign in</a>
+                </div>
+            </form>
+            <div id="error-message" style="display: none;">
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+
+    <script>
+        // JavaScript code for the register.html page
+        const registerForm = document.getElementById('register-form');
+        const errorMessage = document.getElementById("error-message");
+
+        // Function to handle form submission
+        function handleRegistrationFormSubmit(event) {
+            event.preventDefault();
+
+            // Get the form elements 
+            // const firstNameInput = document.getElementById('firstname');
+            // const lastNameInput = document.getElementById('lastname');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+            // Get the values from the form inputs
+            // const firstName = firstNameInput.value.trim();
+            // const lastName = lastNameInput.value.trim();
+            const username = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            // Perform form validation
+            if (!username || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            const url = 'http://localhost:5000/register';
+
+            const userData = {
+                username: username,
+                password: password,
+            };
+
+
+            async function registerUser() {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(userData),
+                    });
+
+                    const data = await response.json();
+
+                    errorMessage.innerText = data.message
+                    errorMessage.style.display = "block"
+
+                    if (data.success) {
+                        window.location.href = "http://127.0.0.1:5500/Book-Frontend/login.html"
+                    }
+                    // Process the response data after the POST request
+                    console.log(data);
+
+                    setTimeout(function () {
+                        errorMessage.style.display = "none";
+                    }, 3000);
+
+                } catch (error) {
+                    // Handle any errors that occurred during the fetch process
+                    console.error('Fetch error:', error);
+                }
+            }
+            registerUser()
+
+            registerForm.reset();
+        }
+
+        registerForm.addEventListener('submit', handleRegistrationFormSubmit);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            access_token = localStorage.getItem("access_token")
+            if (access_token) {
+                window.location.href = "http://127.0.0.1:5500/Book-Frontend/"
+            }
+        });
+    </script>
+</body>
+
+</html>

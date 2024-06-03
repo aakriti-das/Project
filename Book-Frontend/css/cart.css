@@ -1,0 +1,124 @@
+* {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.7)),
+    url(../Image/book1.jpeg.jpg);
+}
+
+.book-details {
+  width: 300px;
+  /* Adjust the width to your preference */
+  margin: 20px auto;
+  /* Center the block horizontally with a 20px top and bottom margin */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow for a slight elevation effect */
+}
+
+.book-details img {
+  width: 150px;
+  /* Adjust the image width to your preference */
+  height: auto;
+  /* Maintain the image aspect ratio */
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.book-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.book-details p {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Optionally, you can style the price differently */
+.book-details p.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #007bff;
+  /* You can use your preferred color for the price */
+}
+
+h1,
+h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Apply styles to the form */
+#add-to-cart-form {
+  width: 300px;
+  /* Adjust the form width to your preference */
+  margin: 20px auto;
+  /* Center the form horizontally with a 20px top and bottom margin */
+  padding: 20px;
+  border: 1px solid #0b0a0a;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow for a slight elevation effect */
+}
+
+/* Apply styles to the form */
+#number-cart {
+  width: 300px;
+  /* Adjust the form width to your preference */
+  margin: 20px auto;
+  /* Center the form horizontally with a 20px top and bottom margin */
+  padding: 20px;
+  border: 1px solid #0b0a0a;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle box shadow for a slight elevation effect */
+}
+
+#books-in-cart {
+  color: blue;
+}
+
+/* Apply styles to the label */
+#add-to-cart-form label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Apply styles to the input */
+#add-to-cart-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #060505;
+  border-radius: 3px;
+}
+
+/* Apply styles to the button */
+#add-to-cart-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #070606;
+  background-color: #007bff;
+  /* You can use your preferred color for the button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Apply styles to the button on hover */
+#add-to-cart-form button:hover {
+  background-color: #0056b3;
+  /* Change the background color on hover */
+}

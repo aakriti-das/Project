@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloved Reads</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- for responsive view navigation -->
+    <div class="main-wrapper">
+        <div class="nav-background">
+
+            <div class="mobile-nav">
+                <div class="cart">
+                    <div class="flex items-center">
+                        <img src="./icons/cart-dark.svg" alt="">
+                        <a href="#">0 Items - (Rs.0.00)</a>
+                    </div>
+                </div>
+                <div class="nav-top">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href=" #">About Us</a>
+                        </li>
+                        <li>
+                            <a href="book.html">Books</a>
+                        </li>
+                        <li>
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Shop</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact-Us</a>
+                        </li>
+                        <div class="logged-in-buttons">
+                            <li>
+                                <a href="login.html">Log in</a>
+                            </li>
+                            <li>
+                                <a href="register.html">Register</a>
+                            </li>
+                        </div>
+
+                    </ul>
+                </div>
+                <div class="contact flex items-center">
+                    <img src="./icons/phone.svg" alt="">
+                    <div>
+                        <h5>Call Us:(+977) 123 456 789</h5>
+                        <h6>E-mail:support@prelovedreads.com</h6>
+                    </div>
+                </div>
+                <div class="time flex items-center">
+                    <img src="./icons/clock.svg" alt="">
+                    <div>
+                        <h5>Working Hours</h5>
+                        <h6>Sun - Fri (9:00 - 3pm)</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-content-wrapper">
+            <div class="nav-trigger">
+
+                <svg style="color: white" height="30px" id="Layer_1" version="1.1" viewBox="0 0 39 39" width="32px"
+                    xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <path
+                        d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"
+                        fill="white"></path>
+                </svg>
+            </div>
+
+            <!-- TOP Site Content  -->
+
+            <div class="site-content">
+                <header class="topbar">
+                    <div class="container flex justify-between items-center">
+                        <div class="icons">
+                            <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                            <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                            <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                            <a href="#"><img src="./icons/google.svg" alt=""></a>
+                            <a href="#"><img src="./icons/search.svg" alt=""></a>
+                        </div>
+                        <div class="auth flex items-center">
+                            <div id="loginDiv" class="flex items-center">
+                                <a href="login.html">Log in</a>
+                                <span class="divider">|</span>
+                                <div id="registerDiv">
+                                    <!-- <img src="./icons/edit.svg" alt=""> -->
+                                    <a href="register.html">Register Now</a>
+                                </div>
+                                <span class="divider">|</span>
+                            </div>
+                            <div id="profileDiv" class="flex items-center">
+                                <img src="./icons/user-icon.svg" alt="">
+                                <div id="userNameDiv"></div>
+                            </div>
+                            <div id="cartDiv">
+                                <img src="./icons/cart.svg" alt="">
+                                <a href="/Book-Frontend/my-carts.html"><span id="cart-items">0</span> Items -
+                                    (Rs.<span id="carts-price">0.00</span>)</a>
+
+                            </div>
+                            <!--<div id="logout">
+                                Logout
+                            </div> -->
+                        </div>
+
+                    </div>
+                </header>
+
+                <!-- navigation bar -->
+                <nav>
+                    <div class="top">
+                        <div class="container flex  justify-between">
+
+
+                            <div class="contact flex items-center">
+                                <img src="./icons/phone.svg" alt="">
+                                <div>
+                                    <h5>Call Us:(+977) 123 456 789</h5>
+                                    <h6>E-mail:support@prelovedreads.com</h6>
+                                </div>
+                            </div>
+
+                            <div class="time flex items-center">
+                                <img src="./icons/clock.svg" alt="">
+                                <div>
+                                    <h5>Working hours:</h5>
+                                    <h6>Sun - Fri (9:00 - 3pm)</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar magic-shadow">
+                        <div class="container flex justify-center">
+                            <a href="index.html" class="">Home</a>
+                            <a href="#">About us</a>
+                            <a href="book.html">Books</a>
+                            <a href="#">Blog</a>
+                            <a href="#">Shop</a>
+                            <a href="#">Services</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">Contact us</a>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Site Content after navigation -->
+
+                <header class="hero flex items-center">
+                    <div class="container">
+
+                        <div class="welcome flex items-center">
+                            <span>Welcome to Preloved Reads!</span>
+                        </div>
+
+                        <h1>Where Books Find <span>New HOMES</span> and</h1>
+                        <h2>Readers Find <span>Great DEALS!</span></h2>
+                        <div>
+                            <button class="btn btn-primary">Read More</button>
+                            <button class="btn btn-secondary">Shop Now</button>
+                        </div>
+
+                        <div class="hero-image">
+                            <img src="./Image/book.png" width="450px" height="440px">
+                        </div>
+                    </div>
+                </header>
+
+                <!-- TOP BOOK section with slider in js -->
+
+                <section class="top-products">
+                    <div class="container">
+                        <h1 class="section-heading">Top Books</h1>
+
+                        <div class="slider">
+                            <button class="slider-btn prev-btn"><img src="./icons/pre.svg" alt=""></button>
+                            <button class="slider-btn next-btn"><img src="./icons/next.svg" alt=""></button>
+                            <div class="book-slider">
+
+                                <div class="book-card magic-shadow-sm">
+                                    <div class="book-image flex items-center justify-center">
+                                        <img src="./Image/book1.png" alt="">
+
+                                    </div>
+
+                                    <!-- Books in slider -->
+
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Dark At The Crossing </h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <div class="price text-center ">
+                                                Rs 200
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <button>
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span>
+                                                        Add To Cart
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="book-card magic-shadow-sm">
+                                    <div class="book-image flex items-center justify-center">
+                                        <img src="./Image/book2.jpg.jpeg" alt="">
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">When I come home again</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <div class="price text-center ">
+                                                Rs 120
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <button>
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span>
+                                                        Add To Cart
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="book-card magic-shadow-sm">
+                                    <div class="book-image flex items-center justify-center">
+                                        <img src="./Image/book3.jpg.jpeg" alt="">
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">EHa</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <div class="price text-center ">
+                                                Rs 280
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <button>
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span>
+                                                        Add To Cart
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="book-card magic-shadow-sm">
+                                    <div class="book-image flex items-center justify-center">
+                                        <img src="./Image/book4.jpg.jpeg" alt="">
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">One Last Ride </h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <div class="price text-center ">
+                                                Rs 190
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <button>
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span>
+                                                        Add To Cart
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="book-card magic-shadow-sm">
+                                    <div class="book-image flex items-center justify-center">
+                                        <img src="./Image/book5.png" alt="">
+
+                                    </div>
+                                    <hr>
+                                    <div>
+                                        <h2 class="text-center">Harry Potter</h2>
+                                        <div class="stars flex justify-center items-center">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/start-filled.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                            <img src="./icons/star-grey.svg" alt="">
+                                        </div>
+                                        <div>
+                                            <div class="price text-center ">
+                                                Rs 200
+                                            </div>
+                                            <div class="flex justify-center">
+                                                <button>
+                                                    <img src="./icons/cart-2.svg" alt="">
+                                                    <span>
+                                                        Add To Cart
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center btn-wrapper">
+                            <button class="btn btn-primary">View More</button>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Preloved Reads -->
+
+                <section class="about-prelovedreads">
+                    <div class="container">
+                        <h1 class="section-heading">About Preloved Reads</h1>
+                        <div class="about-prelovedreads-wrap flex">
+                            <div class="flex-1">
+                                <img src="./Image/demo2.webp" width="470px" height="350px">
+                            </div>
+                            <div class="flex-1">
+                                <h2>Dive into a world of knowledge without breaking the bank
+                                </h2>
+                                <p>
+                                    With a focus on sustainability and affordability >Preloved Reads” aims to
+                                    promote
+                                    the reuse and
+                                    circulation of books while catering to the needs of book lovers. By developing a
+                                    dedicated
+                                    seller
+                                    portal, implementing a robust search functionality and incorporating a rating
+                                    and
+                                    review system.
+                                    It
+                                    seeks to create a seamless and trustworthy online marketplace for second-hand
+                                    books.
+                                </p>
+                                <button class="btn btn-primary">Read More</button>
+                            </div>
+                        </div>
+
+                </section>
+
+                <!-- Big Deals of the week -->
+
+
+                <section class="big-deal">
+                    <div class="container">
+                        <h1 class="section-heading text-pure">Big Deals of the Week</h1>
+                        <div class="timer">
+                            <div>
+                                <span>02</span>
+                                <span>Days</span>
+                            </div>
+                            <div>
+                                <span>24</span>
+                                <span>Hours</span>
+                            </div>
+                            <div>
+                                <span>55</span>
+                                <span>Minutes</span>
+                            </div>
+                            <div>
+                                <span>58</span>
+                                <span>Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Us section with responsive google map -->
+
+                <section class="contact-us flex ">
+                    <div class="contact-info-wrapper">
+                        <h1 class="section-heading">Contact Us</h1>
+                        <div class="contact-info">
+                            <div>
+                                <div>
+                                    <img src="./icons/phone-2.svg" alt="">
+                                    <div>
+                                        <span>Call Us:</span>
+                                        <span>(+977) 123 456 789</span>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img src="./icons/bag-2.svg" alt="">
+                                    <div>
+                                        <span>E-mail:</span>
+                                        <span>support@prelovedreads.com</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="./icons/clock-2.svg" alt="">
+                                    <div>
+                                        <span>Working Hours:</span>
+                                        <span>Sun - Fri (9:00 - 3pm)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.006413042409!2d85.33007480669858!3d27.694071163670195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb199a06c2eaf9%3A0xc5670a9173e161de!2sNew%20Baneshwor%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1688902056026!5m2!1sen!2snp"
+                            width=100% height=100% style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </section>
+
+                <!-- FOOTER section -->
+
+                <footer>
+                    <div class="container">
+                        <div class="box">
+                            <h3>About Us</h3>
+                            <p>Preloved Reads is to simplify the process of purchasing books online. The platform
+                                offers
+                                a simple
+                                and easy-to-use website where users can search for specific books by title, author
+                                or
+                                genre.</p>
+                            <button class="btn btn-primary flex justify-center">Read More</button>
+                        </div>
+                        <div class="box">
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Books</a>
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Shop</a>
+                                </li>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="box">
+                            <h3>Follow Us</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/facebook.svg" alt="">
+                                        <span>Facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/twitter.svg" alt="">
+                                        <span>Twitter</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/google.svg" alt="">
+                                        <span>Google</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./icons/instagram.svg" alt="">
+                                        <span>Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </footer>
+                <footer class="copyright">
+                    <div>
+                        Copyright ©️ 2023 .All rights reserved by <a href="#">Coder's Bird</a>
+                    </div>
+                </footer>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JS link -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/script.js"></script>
+
+
+    <!--<script>
+        const logout = document.getElementById("logout")
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const loginDiv = document.getElementById("loginDiv");
+            const profileDiv = document.getElementById("profileDiv");
+            const userNameDiv = document.getElementById("userNameDiv");
+            const cartDiv = document.getElementById("cartDiv");
+
+            access_token = localStorage.getItem("access_token")
+
+            if (access_token) {
+                loginDiv.style.display = "none";
+            } else {
+                loginDiv.style.display = "block";
+                profileDiv.style.display = "none";
+            }
+
+            const url = 'http://localhost:5000/get-profile';
+
+            const bearerToken = localStorage.getItem("access_token")
+            const headers = new Headers();
+            headers.append('Authorization', `Bearer ${bearerToken}`);
+            headers.append('Content-Type', 'application/json');
+
+            // Perform the POST request using fetch
+            async function getProfile() {
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: headers,
+
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        loginDiv.style.display = "none";
+                        profileDiv.style.display = "flex";
+                        logout.style.display = "block";
+                        cartDiv.style.display = "block";
+                        userNameDiv.innerText = data.data.username
+                    } else {
+                        logout.style.display = "none";
+                        loginDiv.style.display = "flex";
+                        cartDiv.style.display = "none";
+                        localStorage.removeItem("access_token")
+                    }
+
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                }
+            }
+
+            async function fetchCarts() {
+                // const booksInCart = document.getElementById("books-in-cart")
+                const cartItems = document.getElementById("cart-items");
+                const cartsPrice = document.getElementById("carts-price");
+
+                const url = 'http://localhost:5000/books/get-carts-price';
+
+                const bearerToken = localStorage.getItem("access_token")
+                const headers = new Headers();
+                headers.append('Authorization', `Bearer ${bearerToken}`);
+                headers.append('Content-Type', 'application/json');
+
+                try {
+                    const response = await fetch(url, {
+                        method: 'GET',
+                        headers: headers,
+                    });
+
+                    const data = await response.json();
+                    console.log(data)
+
+                    if (data.success) {
+                        cartItems.innerText = data.data.quantity
+                        cartsPrice.innerText = data.data.price
+                    }
+                } catch (error) {
+                    // Handle any errors that occurred during the fetch process
+                    console.error('Fetch error:', error);
+                }
+            }
+
+            Promise.all([fetchCarts(), getProfile()])
+                .then(() => {
+                    // console.log("Both fetch requests completed.");
+                })
+                .catch((error) => {
+                    console.error("Error in fetching:", error);
+                });
+        });
+
+
+        const handleLogout = () => {
+            localStorage.removeItem("access_token")
+            window.location.reload()
+        }
+
+        logout.addEventListener('click', handleLogout);
+
+    </script>-->
+
+</body>
+
+</html>

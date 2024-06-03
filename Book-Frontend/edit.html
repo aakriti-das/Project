@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+
+    <div class="book-section">
+
+        <form action="" id="form">
+            <div>
+                <label for="">Book Number(isbn)</label>
+                <input type="text" id="isbn" placeholder="Book Number" required disabled>
+            </div>
+
+            <div>
+                <label for="">Book Name</label>
+                <input type="text" id="book_name" placeholder="Book Name" required>
+            </div>
+
+            <div>
+                <label for="">Author Name</label>
+                <input type="text" id="author_name" placeholder="Author Name" required>
+            </div>
+
+
+            <div>
+                <label for="">Category</label>
+                <input type="text" id="category" placeholder="Category" required>
+            </div>
+
+
+            <div>
+                <label for="">Description</label>
+                <input type="text" id="description" placeholder="Description" required>
+            </div>
+
+            <div>
+                <label for="">Image</label>
+                <input type="text" id="image-url" placeholder="Image Url" required>
+                <!-- <input type="file" id="img"> -->
+            </div>
+
+            <div>
+                <label for="">Price</label>
+                <input type="number" id="price" placeholder="Price" required>
+            </div>
+
+            <div>
+                <label for="">Published Date</label>
+                <input type="text" id="published_date" placeholder="2022-03-28" required>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <button type="submit" id="submit_btn">Update Book</button>
+        </form>
+    </div>
+
+    <script src=" ./JS/edit.js"></script>
+</body>
+
+</html>

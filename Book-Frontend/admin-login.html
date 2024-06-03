@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="./css/admin.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <form id="login-form">
+            <h2>Admin Login</h2>
+            <input type="text" id="username" placeholder="Username" required> <br>
+            <input type="password" id="password" placeholder="Password" required> <br>
+            <button type="submit">Login </button>
+            <!-- Display Success Message (Hidden by default) -->
+            <div id="error-message" style="display: none;">
+                <p>Admin logged in successfully!</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("login-form");
+        loginForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const errorMessage = document.getElementById("error-message");
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            const userData = {
+                username: username,
+                password: password,
+            };
+
+            const url = 'http://localhost:5000/admin-login';
+
+
+            // Perform the POST request using fetch
+            async function loginAdmin() {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(userData),
+                    });
+
+                    const data = await response.json();
+
+                    errorMessage.innerText = data.message
+                    errorMessage.style.display = "block"
+
+                    if (data.success) {
+                        localStorage.setItem("access_token", data.data.access_token)
+                        window.location.href = "http://127.0.0.1:5500/Book-Frontend/admin.html"
+                    }
+
+                    setTimeout(function () {
+                        // Show the success message and hide the form
+                        errorMessage.style.display = "none";
+                    }, 1000);
+
+                    // Process the response data after the POST request
+                    console.log(data);
+                } catch (error) {
+                    // Handle any errors that occurred during the fetch process
+                    console.error('Fetch error:', error);
+                }
+            }
+            loginAdmin()
+        });
+    </script>
+
+    <script>
+        const url = 'http://localhost:5000/get-profile';
+
+        const bearerToken = localStorage.getItem("access_token")
+        const headers = new Headers();
+        headers.append('Authorization', `Bearer ${bearerToken}`);
+        headers.append('Content-Type', 'application/json');
+
+        // Perform the POST request using fetch
+        async function getProfile() {
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: headers,
+
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    if (data.data.type == "admin") {
+                        window.location.replace("admin.html");
+                    }
+                }
+
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+        getProfile()
+    </script>
+</body>
+
+</html>

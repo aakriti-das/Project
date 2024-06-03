@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.7)),
+        url(../Image/back1.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: grid;
+}
+
+.form-box {
+    position: relative;
+    width: 90%;
+    max-width: 450px;
+    background: floralwhite;
+    padding: 50px 60px 70px;
+    text-align: center;
+    margin: auto auto;
+}
+
+.form-box h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #a22347;
+    position: relative;
+}
+
+.form-box h1::after {
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #a22347;
+    position: absolute;
+    bottom: -12px;
+    left: 46%;
+    transform: translateX(10%);
+
+
+}
+
+.input-field {
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+
+}
+
+.input-field i {
+    margin-left: 15px;
+    color: #999;
+}
+
+form p {
+    text-align: center;
+    font-size: 13px;
+
+}
+
+form p a {
+    text-decoration: none;
+    color: #a22347;
+}
+
+.btn-field {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-field button {
+    flex: basis 48%;
+    background: #a22347;
+    color: #fff;
+    width: 90px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+    font-size: 16px;
+    margin-left: 130px;
+    margin-top: 20px;
+
+}
+
+
+#success-message,
+#error-message {
+    position: absolute;
+    bottom: 0;
+    width: 300px;
+    /* Adjust the message width to your preference */
+    margin: 10px auto;
+    /* Center the message horizontally with a 10px top and bottom margin */
+    padding: 15px;
+    border: 1px solid #045b07;
+    /* For success message, you can use #4caf50 or your preferred color */
+    border-radius: 5px;
+    text-align: center;
+    background-color: #dff0d8;
+    /* For success message, you can use #dff0d8 or your preferred color */
+    color: #4caf50;
+    /* For success message, you can use #4caf50 or your preferred color */
+}

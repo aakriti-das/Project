@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/book.css">
+
+</head>
+
+<body>
+    <div class="nav-background">
+
+        <div class="mobile-nav">
+            <div class="cart">
+                <div class="flex items-center">
+                    <img src="./icons/cart-dark.svg" alt="">
+                    <a href="#">0 Items - (Rs.0.00)</a>
+                </div>
+            </div>
+            <div class="nav-top">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href=" #">About Us</a>
+                    </li>
+                    <li>
+                        <a href="book.html">Books</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact-Us</a>
+                    </li>
+                    <div class="logged-in-buttons">
+                        <li>
+                            <a href="login.html">Log in</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Register</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <div class="contact flex items-center">
+                <img src="./icons/phone.svg" alt="">
+                <div>
+                    <h5>Call Us:(+977) 123 456 789</h5>
+                    <h6>E-mail:support@vintagekitaab.com</h6>
+                </div>
+            </div>
+            <div class="time flex items-center">
+                <img src="./icons/clock.svg" alt="">
+                <div>
+                    <h5>Working Hours</h5>
+                    <h6>Sun - Fri (9:00 - 3pm)</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-content-wrapper">
+        <div class="nav-trigger">
+            <!--?xml version="1.0" ?--><svg style="color: white" height="30px" id="Layer_1" version="1.1"
+                viewBox="0 0 39 39" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path
+                    d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"
+                    fill="white"></path>
+            </svg>
+        </div>
+        <div class="site-content">
+            <header class="topbar">
+                <div class="container flex justify-between items-center">
+                    <div class="icons">
+                        <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                        <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                        <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                        <a href="#"><img src="./icons/google.svg" alt=""></a>
+                        <a href="#"><img src="./icons/search.svg" alt=""></a>
+                    </div>
+                    <div class="auth flex items-center">
+                        <div id="loginDiv" class="flex items-center">
+                            <a href="login.html">Log in</a>
+                            <span class="divider">|</span>
+                            <div id="registerDiv">
+                                <img src="./icons/edit.svg" alt="">
+                                <a href="register.html">Register Now</a>
+                            </div>
+                            <span class="divider">|</span>
+                        </div>
+                        <div id="profileDiv">
+                            <img src="./icons/user-icon.svg" alt="">
+                            <div id="userNameDiv"></div>
+                        </div>
+                        <div id="cartDiv">
+                            <img src="./icons/cart.svg" alt="">
+                            <a href="/Book-Frontend/my-carts.html"><span id="cart-items">0</span> Items -
+                                (Rs.<span id="carts-price">0.00</span>)</a>
+
+                        </div>
+                        <div id="logout">
+                            Logout
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+
+            <nav>
+                <div class="top">
+                    <div class="container flex  justify-between">
+
+
+                        <div class="contact flex items-center">
+                            <img src="./icons/phone.svg" alt="">
+                            <div>
+                                <h5>Call Us:(+977) 123 456 789</h5>
+                                <h6>E-mail:support@vintagekitaab.com</h6>
+                            </div>
+                        </div>
+
+                        <div class="time flex items-center">
+                            <img src="./icons/clock.svg" alt="">
+                            <div>
+                                <h5>Working hours:</h5>
+                                <h6>Sun - Fri (9:00 - 3pm)</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar magic-shadow">
+                    <div class="container flex justify-center">
+                        <a href="index.html" class="active">Home</a>
+                        <a href="#">About us</a>
+                        <a href="book.html">Books</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Shop</a>
+                        <a href="#">Services</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Contact us</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="books">
+                <div class="box-container">
+                    <!-- <h1>Newly Arrived</h1>
+                    <div class="wrapper">
+
+                        <div class="box">
+
+                            <div class="ad">
+                                <img src="./Image/book1.png" width="450">
+                            </div>
+                            <h3>Dark at the crossing</h3>
+
+                            <button class="books-btn btn btn-primary">
+                                <img src="./icons/cart-2.svg" width="25px">
+                                <span>
+                                    Add To Cart
+                                </span>
+                            </button>
+
+                        </div>
+
+
+                        <div class="box">
+
+                            <div class="ad">
+                                <img src="./Image/book1.png" width="450">
+                            </div>
+                            <h3>Dark at the crossing</h3>
+
+                            <button class="books-btn btn btn-primary">
+                                <img src="./icons/cart-2.svg" width="25px">
+                                <span>
+                                    Add To Cart
+                                </span>
+                            </button>
+
+                        </div>
+
+                        <div class="box">
+
+                            <div class="ad">
+                                <img src="./Image/book1.png" width="450">
+                            </div>
+                            <h3>Dark at the crossing</h3>
+
+                            <button class="books-btn btn btn-primary">
+                                <img src="./icons/cart-2.svg" width="25px">
+                                <span>
+                                    Add To Cart
+                                </span>
+                            </button>
+
+                        </div>
+
+                        <div class="box">
+
+                            <div class="ad">
+                                <img src="./Image/book1.png" width="450">
+                            </div>
+                            <h3>Dark at the crossing</h3>
+
+                            <button class="books-btn btn btn-primary">
+                                <img src="./icons/cart-2.svg" width="25px">
+                                <span>
+                                    Add To Cart
+                                </span>
+                            </button>
+
+                        </div>
+
+                        <div class="box">
+
+                            <div class="ad">
+                                <img src="./Image/book1.png" width="450">
+                            </div>
+                            <h3>Dark at the crossing</h3>
+
+                            <button class="books-btn btn btn-primary">
+                                <img src="./icons/cart-2.svg" width="25px">
+                                <span>
+                                    Add To Cart
+                                </span>
+                            </button>
+
+                        </div>
+
+                    </div> -->
+                </div>
+
+
+                <div class="box-container">
+                    <h1>Newly Arrived Books</h1>
+                    <div class="wrapper" id="render_popular_books">
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                // JavaScript code for the book.html page
+
+                const url = 'http://localhost:5000/books/newly-arrived';
+
+                const bearerToken = localStorage.getItem("access_token")
+                const headers = new Headers();
+                headers.append('Authorization', `Bearer ${bearerToken}`);
+                headers.append('Content-Type', 'application/json');
+
+                // Perform the POST request using fetch
+                async function getNewlyArrivedBooks() {
+                    try {
+                        const response = await fetch(url, {
+                            method: 'GET',
+                            headers: headers
+                        });
+
+                        const data = await response.json();
+
+                        const newlyArrivedBooks = data.data
+
+                        console.log(newlyArrivedBooks)
+
+                        // Function to render popular books
+                        function renderPopularBooks() {
+                            const renderPopularBooksDiv = document.getElementById('render_popular_books');
+                            renderPopularBooksDiv.innerHTML = '';
+
+                            newlyArrivedBooks.forEach(book => {
+                                const boxDiv = document.createElement('div');
+                                boxDiv.classList.add('box');
+
+                                const adDiv = document.createElement('div');
+                                adDiv.classList.add('ad');
+                                const bookImage = document.createElement('img');
+                                bookImage.src = book.image_url;
+                                bookImage.width = 350;
+                                bookImage.height = 300;
+                                bookImage.classList.add("book-image")
+                                adDiv.appendChild(bookImage);
+                                boxDiv.appendChild(adDiv);
+
+                                const h3 = document.createElement('h3');
+                                h3.textContent = book.name;
+                                boxDiv.appendChild(h3);
+
+                                const priceDiv = document.createElement('div');
+                                priceDiv.classList.add("price")
+                                priceDiv.textContent = `Rs. ${book.price}`;
+                                boxDiv.appendChild(priceDiv);
+
+                                const descriptionDiv = document.createElement('div');
+                                descriptionDiv.classList.add("description")
+                                descriptionDiv.textContent = book.description;
+                                boxDiv.appendChild(descriptionDiv);
+
+                                const btn = document.createElement('button');
+                                // btn.classList.add('books-btn', 'btn', 'btn-primary');
+                                const cartIcon = document.createElement('img');
+                                cartIcon.src = './icons/cart-2.svg';
+                                cartIcon.width = 25;
+                                const link = document.createElement('a');
+                                link.textContent = 'Add To Cart';
+                                link.href = `/Book-Frontend/cart.html?book-id=${book.isbn}`
+                                btn.appendChild(cartIcon);
+                                btn.appendChild(link);
+                                boxDiv.appendChild(btn);
+
+                                renderPopularBooksDiv.appendChild(boxDiv);
+                            });
+                        }
+
+                        // Call the renderPopularBooks function to display popular books initially
+                        renderPopularBooks();
+
+                        // Event listener for the cart buttons (you can implement the cart functionality here)
+                        const cartButtons = document.querySelectorAll('.books-btn');
+                        cartButtons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                // Implement the cart functionality here, e.g., adding items to the cart, updating cart total, etc.
+                                alert('Item added to cart!');
+                            });
+                        });
+
+                    } catch (error) {
+                        // Handle any errors that occurred during the fetch process
+                        console.error('Fetch error:', error);
+                    }
+                }
+                getNewlyArrivedBooks()
+
+            </script>
+
+            <script>
+                const logout = document.getElementById("logout")
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const loginDiv = document.getElementById("loginDiv");
+                    const profileDiv = document.getElementById("profileDiv");
+                    const userNameDiv = document.getElementById("userNameDiv");
+                    const cartDiv = document.getElementById("cartDiv");
+
+                    access_token = localStorage.getItem("access_token")
+
+                    if (access_token) {
+                        loginDiv.style.display = "none";
+                    } else {
+                        loginDiv.style.display = "block";
+                        profileDiv.style.display = "none";
+                    }
+
+                    const url = 'http://localhost:5000/get-profile';
+
+                    const bearerToken = localStorage.getItem("access_token")
+                    const headers = new Headers();
+                    headers.append('Authorization', `Bearer ${bearerToken}`);
+                    headers.append('Content-Type', 'application/json');
+
+                    // Perform the POST request using fetch
+                    async function getProfile() {
+                        try {
+                            const response = await fetch(url, {
+                                method: 'GET',
+                                headers: headers,
+                            });
+
+                            const data = await response.json();
+
+                            if (data.success) {
+                                loginDiv.style.display = "none";
+                                profileDiv.style.display = "flex";
+                                logout.style.display = "block";
+                                cartDiv.style.display = "block";
+                                userNameDiv.innerText = data.data.username
+                            } else {
+                                logout.style.display = "none";
+                                loginDiv.style.display = "flex";
+                                cartDiv.style.display = "none";
+                                localStorage.removeItem("access_token")
+                            }
+
+                        } catch (error) {
+                            console.error('Fetch error:', error);
+                        }
+                    }
+
+                    async function fetchCarts() {
+                        // const booksInCart = document.getElementById("books-in-cart")
+                        const cartItems = document.getElementById("cart-items");
+                        const cartsPrice = document.getElementById("carts-price");
+
+                        const url = 'http://localhost:5000/books/get-carts-price';
+
+                        const bearerToken = localStorage.getItem("access_token")
+                        const headers = new Headers();
+                        headers.append('Authorization', `Bearer ${bearerToken}`);
+                        headers.append('Content-Type', 'application/json');
+
+                        try {
+                            const response = await fetch(url, {
+                                method: 'GET',
+                                headers: headers,
+                            });
+
+                            const data = await response.json();
+                            console.log(data)
+
+                            if (data.success) {
+                                cartItems.innerText = data.data.quantity
+                                cartsPrice.innerText = data.data.price
+                            }
+                        } catch (error) {
+                            // Handle any errors that occurred during the fetch process
+                            console.error('Fetch error:', error);
+                        }
+                    }
+
+                    Promise.all([fetchCarts(), getProfile()])
+                        .then(() => {
+                            // console.log("Both fetch requests completed.");
+                        })
+                        .catch((error) => {
+                            console.error("Error in fetching:", error);
+                        });
+
+                    const handleLogout = () => {
+                        localStorage.removeItem("access_token")
+                        window.location.reload()
+                    }
+
+                    logout.addEventListener('click', handleLogout);
+                });
+            </script>
+
+
+</body>
+
+</html>

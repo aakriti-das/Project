@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/book.css">
+
+</head>
+
+<body>
+    <div class="nav-background">
+
+        <div class="mobile-nav">
+            <div class="cart">
+                <div class="flex items-center">
+                    <img src="./icons/cart-dark.svg" alt="">
+                    <a href="#">0 Items - (Rs.0.00)</a>
+                </div>
+            </div>
+            <div class="nav-top">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href=" #">About Us</a>
+                    </li>
+                    <li>
+                        <a href="book.html">Books</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact-Us</a>
+                    </li>
+                    <div class="logged-in-buttons">
+                        <li>
+                            <a href="login.html">Log in</a>
+                        </li>
+                        <li>
+                            <a href="register.html">Register</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+            <div class="contact flex items-center">
+                <img src="./icons/phone.svg" alt="">
+                <div>
+                    <h5>Call Us:(+977) 123 456 789</h5>
+                    <h6>E-mail:support@prelovedreads.com</h6>
+                </div>
+            </div>
+            <div class="time flex items-center">
+                <img src="./icons/clock.svg" alt="">
+                <div>
+                    <h5>Working Hours</h5>
+                    <h6>Sun - Fri (9:00 - 3pm)</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="site-content-wrapper">
+        <div class="nav-trigger">
+            <!--?xml version="1.0" ?--><svg style="color: white" height="30px" id="Layer_1" version="1.1"
+                viewBox="0 0 39 39" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path
+                    d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"
+                    fill="white"></path>
+            </svg>
+        </div>
+        <div class="site-content">
+            <header class="topbar">
+                <div class="container flex justify-between items-center">
+                    <div class="icons">
+                        <a href="#"><img src="./icons/facebook.svg" alt=""></a>
+                        <a href="#"><img src="./icons/twitter.svg" alt=""></a>
+                        <a href="#"><img src="./icons/instagram.svg" alt=""></a>
+                        <a href="#"><img src="./icons/google.svg" alt=""></a>
+                        <a href="#"><img src="./icons/search.svg" alt=""></a>
+                    </div>
+                    <div class="auth flex items-center">
+                        <div id="loginDiv" class="flex items-center">
+                            <a href="login.html">Log in</a>
+                            <span class="divider">|</span>
+                            <div id="registerDiv">
+                                <img src="./icons/edit.svg" alt="">
+                                <a href="register.html">Register Now</a>
+                            </div>
+                            <span class="divider">|</span>
+                        </div>
+                        <div id="profileDiv">
+                            <img src="./icons/user-icon.svg" alt="">
+                            <div id="userNameDiv"></div>
+                        </div>
+                        <div id="cartDiv">
+                            <img src="./icons/cart.svg" alt="">
+                            <a href="/Book-Frontend/my-carts.html"><span id="cart-items">0</span> Items -
+                                (Rs.<span id="carts-price">0.00</span>)</a>
+                        </div>
+
+                        <div id="logout">
+                            Logout
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+
+            <nav>
+                <div class="top">
+                    <div class="container flex  justify-between">
+
+
+                        <div class="contact flex items-center">
+                            <img src="./icons/phone.svg" alt="">
+                            <div>
+                                <h5>Call Us:(+977) 123 456 789</h5>
+                                <h6>E-mail:support@prelovedreads.com</h6>
+                            </div>
+                        </div>
+
+                        <div class="time flex items-center">
+                            <img src="./icons/clock.svg" alt="">
+                            <div>
+                                <h5>Working hours:</h5>
+                                <h6>Sun - Fri (9:00 - 3pm)</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navbar magic-shadow">
+                    <div class="container flex justify-center">
+                        <a href="index.html" class="active">Home</a>
+                        <a href="#">About us</a>
+                        <a href="book.html">Books</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Shop</a>
+                        <a href="#">Services</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Contact us</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="books">
+                <div class="box-container">
+                </div>
+
+
+                <div class="box-container">
+                    <h1>My Carts</h1>
+                    <div class="wrapper" id="carts">
+
+                    </div>
+                </div>
+            </div>
+<!---->
+            <script>
+                const logout = document.getElementById("logout")
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const loginDiv = document.getElementById("loginDiv");
+                    const profileDiv = document.getElementById("profileDiv");
+                    const userNameDiv = document.getElementById("userNameDiv");
+                    const cartDiv = document.getElementById("cartDiv");
+
+                    access_token = localStorage.getItem("access_token")
+
+                    if (access_token) {
+                        loginDiv.style.display = "none";
+                    } else {
+                        loginDiv.style.display = "block";
+                        profileDiv.style.display = "none";
+                    }
+
+                    const url = 'http://localhost:5000/get-profile';
+
+                    const bearerToken = localStorage.getItem("access_token")
+                    const headers = new Headers();
+                    headers.append('Authorization', `Bearer ${bearerToken}`);
+                    headers.append('Content-Type', 'application/json');
+
+                    // Perform the POST request using fetch
+                    async function getProfile() {
+                        try {
+                            const response = await fetch(url, {
+                                method: 'GET',
+                                headers: headers,
+
+                            });
+
+                            const data = await response.json();
+
+                            if (data.success) {
+                                loginDiv.style.display = "none";
+                                profileDiv.style.display = "flex";
+                                logout.style.display = "block";
+                                cartDiv.style.display = "block";
+                                userNameDiv.innerText = data.data.username
+                            } else {
+                                logout.style.display = "none";
+                                loginDiv.style.display = "flex";
+                                cartDiv.style.display = "none";
+                                localStorage.removeItem("access_token")
+                            }
+
+                        } catch (error) {
+                            console.error('Fetch error:', error);
+                        }
+                    }
+                    getProfile()
+                });
+            </script>
+
+            <script>
+                const carts = document.getElementById("carts")
+
+
+                async function fetchCartsAll() {
+                    const carts = document.getElementById("carts")
+                    carts.innerHTML = ""
+
+                    const cartItems = document.getElementById("cart-items");
+                    const cartsPrice = document.getElementById("carts-price");
+
+                    const url = 'http://localhost:5000/books/get-cart-books';
+
+                    const bearerToken = localStorage.getItem("access_token")
+                    const headers = new Headers();
+                    headers.append('Authorization', `Bearer ${bearerToken}`);
+                    headers.append('Content-Type', 'application/json');
+
+                    try {
+                        const response = await fetch(url, {
+                            method: 'GET',
+                            headers: headers,
+                        });
+
+                        const data = await response.json();
+                        console.log(data)
+
+
+                        if (data.success) {
+                            let quantity = 0
+                            let price = 0
+
+                            data.data.forEach(cart => {
+                                quantity = quantity + cart.quantity
+                                price = price + cart.quantity * cart.book.price
+
+                                const cartBox = document.createElement("div")
+                                cartBox.classList.add("cart")
+                                const cartImageBox = document.createElement("div")
+                                cartImageBox.classList.add("cart-image")
+                                const cartImage = document.createElement("img")
+                                cartImage.src = cart.book.image_url
+                                cartImageBox.appendChild(cartImage)
+                                const cartDeleteDiv = document.createElement("div")
+                                cartDeleteDiv.classList.add("delete-button")
+                                cartDeleteDiv.setAttribute("bookIsbn", cart.book.isbn);
+                                const cartDeleteImage = document.createElement("img")
+                                cartDeleteImage.src = "/Book-Frontend/icons/delete.png"
+                                cartDeleteDiv.appendChild(cartDeleteImage)
+
+
+                                const cartDetailsBox = document.createElement("div")
+                                cartDetailsBox.classList.add("cart-details-box")
+                                const cartName = document.createElement("div")
+                                cartName.classList.add("cart-name")
+                                cartName.innerText = cart.book.name
+                                const cartQuantity = document.createElement("input")
+                                cartQuantity.classList.add("cart-quantity")
+                                cartQuantity.setAttribute("type", "number");
+                                cartQuantity.setAttribute("min", "1");
+                                cartQuantity.value = cart.quantity
+                                const cartPrice = document.createElement("div")
+                                cartPrice.classList.add("cart-price")
+                                cartPrice.innerText = `Price: ${cart.book.price}`
+                                const cartTotal = document.createElement("div")
+                                cartTotal.classList.add("cart-total")
+                                cartTotal.innerText = `Total: ${cart.book.price * cart.quantity}`
+
+                                cartDetailsBox.appendChild(cartName)
+                                cartDetailsBox.appendChild(cartQuantity)
+                                cartDetailsBox.appendChild(cartPrice)
+                                cartDetailsBox.appendChild(cartTotal)
+
+                                cartBox.appendChild(cartImageBox)
+                                cartBox.appendChild(cartDetailsBox)
+                                cartBox.appendChild(cartDeleteDiv)
+                                carts.appendChild(cartBox)
+
+                                cartDeleteDiv.addEventListener("click", async function () {
+                                    const bookIsbn = this.getAttribute("bookIsbn");
+
+                                    const url = "http://localhost:5000/books/delete-cart";
+                                    const queryParams = new URLSearchParams({ isbn: bookIsbn });
+                                    const urlWithParams = `${url}?${queryParams}`;
+
+                                    const bearerToken = localStorage.getItem("access_token")
+                                    const headers = new Headers();
+                                    headers.append('Authorization', `Bearer ${bearerToken}`);
+                                    headers.append('Content-Type', 'application/json');
+
+                                    const confirmation = window.confirm("Are you sure you want to delete this cart?");
+
+                                    if (confirmation) {
+                                        try {
+                                            const response = await fetch(urlWithParams, {
+                                                method: 'GET',
+                                                headers: headers,
+                                            });
+
+                                            const data = await response.json();
+
+                                            if (data.success) {
+                                                alert("Item deleted successfully");
+                                                window.location.reload();
+                                            }
+                                        } catch (error) {
+                                            console.error('Fetch error:', error);
+                                        }
+                                    }
+
+                                });
+
+
+                                cartQuantity.addEventListener("change", () => {
+                                    const bookIsbn = cartDeleteDiv.getAttribute("bookIsbn");
+                                    const newQuantity = parseInt(cartQuantity.value, 10);
+                                    if (!isNaN(newQuantity) && newQuantity >= 1) {
+                                        const url = 'http://localhost:5000/books/update-cart';
+
+                                        const cartData = {
+                                            book_isbn: bookIsbn,
+                                            quantity: newQuantity
+                                        };
+
+                                        const bearerToken = localStorage.getItem("access_token")
+                                        const headers = new Headers();
+                                        headers.append('Authorization', `Bearer ${bearerToken}`);
+                                        headers.append('Content-Type', 'application/json');
+
+                                        // Perform the POST request using fetch
+                                        async function changeCart() {
+                                            try {
+                                                const response = await fetch(url, {
+                                                    method: 'POST',
+                                                    headers: headers,
+                                                    body: JSON.stringify(cartData),
+                                                });
+
+                                                const data = await response.json();
+
+                                                if (data.success) {
+                                                    cartTotal.innerText = `Total: ${cart.book.price * newQuantity}`;
+                                                } else {
+                                                    cartQuantity.value = cart.quantity
+                                                }
+                                            } catch (error) {
+                                                // Handle any errors that occurred during the fetch process
+                                                console.error('Fetch error:', error);
+                                            }
+                                        }
+
+                                        changeCart()
+
+                                        cartTotal.innerText = `Total: ${cart.book.price * newQuantity}`;
+                                    } else {
+                                        cartQuantity.value = cart.quantity;
+                                    }
+                                });
+
+                            })
+
+                            cartItems.innerText = quantity
+                            cartsPrice.innerText = price
+
+                        }
+                    } catch (error) {
+                        // Handle any errors that occurred during the fetch process
+                        console.error('Fetch error:', error);
+                    }
+                }
+
+                fetchCartsAll()
+                const handleLogout = () => {
+                    localStorage.removeItem("access_token")
+                    window.location.reload()
+                }
+
+                logout.addEventListener('click', handleLogout);
+            </script>
+
+
+</body>
+
+</html>
