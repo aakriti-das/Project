@@ -104,7 +104,7 @@ fetch("http://localhost:5000/books/get-book?isbn="+currentIsbn)
         console.log(data);
   
         if (data.success) {
-            window.location.href = "http://127.0.0.1:5500/Book-Frontend/admin.html";
+            window.location.href = "./admin.html";
         }
       } catch (error) {
         // Handle any errors that occurred during the fetch process

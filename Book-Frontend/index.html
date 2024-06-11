@@ -119,9 +119,9 @@
                                     (Rs.<span id="carts-price">0.00</span>)</a>
 
                             </div>
-                            <!--<div id="logout">
+                            <button id="logout">
                                 Logout
-                            </div> -->
+                            </button>
                         </div>
 
                     </div>
@@ -549,8 +549,17 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
 
+    <!-- <script>
+        $("#logout").click(function (
 
-    <!--<script>
+        ) {
+            console.log("hello")
+            localStorage.removeItem("access_token")
+            window.location.reload()
+
+        })
+    </script> -->
+    <script>
         const logout = document.getElementById("logout")
 
         document.addEventListener("DOMContentLoaded", function () {
@@ -652,7 +661,7 @@
 
         logout.addEventListener('click', handleLogout);
 
-    </script>-->
+    </script>
 
 </body>
 
