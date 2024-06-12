@@ -20,10 +20,7 @@ Before running this project, make sure you have the following prerequisites:
 
 1. Clone the repository to your local machine:
 
-```bash
-    git clone https://github.com/Roshan54321/Library-System-Backend.git
-    cd Library-System-Backend
-```
+
 
 2. Install the required dependencies:
 
