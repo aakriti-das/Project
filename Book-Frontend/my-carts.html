@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +7,39 @@
     <title>Book List</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/book.css">
+    <style>
+        .search-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
 
+        .search-bar input {
+            flex-grow: 1;
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+        }
+
+        .search-bar button {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
-
 <body>
     <div class="nav-background">
-
         <div class="mobile-nav">
             <div class="cart">
                 <div class="flex items-center">
@@ -91,7 +117,15 @@
                         <a href="#"><img src="./icons/twitter.svg" alt=""></a>
                         <a href="#"><img src="./icons/instagram.svg" alt=""></a>
                         <a href="#"><img src="./icons/google.svg" alt=""></a>
-                        <a href="#"><img src="./icons/search.svg" alt=""></a>
+                        <div class="search-icon">
+                            <a href="#"><img src="./icons/search.svg" alt="Search Icon"></a>
+                        </div>
+                        <div class="search-bar hidden">
+                            <form id="search-form">
+                              <input type="text" name="search_value" id="search" placeholder="Search...">
+                              <button type="submit">Search</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="auth flex items-center">
                         <div id="loginDiv" class="flex items-center">
@@ -109,7 +143,7 @@
                         </div>
                         <div id="cartDiv">
                             <img src="./icons/cart.svg" alt="">
-                            <a href="/Book-Frontend/my-carts.html"><span id="cart-items">0</span> Items -
+                            <a href="../Book-Frontend/my-carts.html"><span id="cart-items">0</span> Items -
                                 (Rs.<span id="carts-price">0.00</span>)</a>
                         </div>
 
@@ -120,8 +154,6 @@
 
                 </div>
             </header>
-
-
             <nav>
                 <div class="top">
                     <div class="container flex  justify-between">
@@ -169,8 +201,39 @@
                     </div>
                 </div>
             </div>
-<!---->
+            <div class="payment">
+                <button onclick="payment()">Payment Khalti</button>
+            </div>
+            <!---->
             <script>
+                function payment() {
+                    let carts = document.querySelector("#carts");
+                    let cartsItems = carts.querySelectorAll(".cart");
+
+                    let totalPrice = 0;
+                    cartsItems.forEach((cartItem) => {
+                        let price = cartItem.querySelector(".cart-total").innerText.split(":")[1].trim();
+                        totalPrice += parseInt(price);
+                    });
+
+                    const url = "http://localhost:5000/books/payment";
+                    const payload = {
+                        "totalPrice": totalPrice
+                    }
+
+                    fetch(url, {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(payload),
+                    })
+                        .then(response => response.json())
+                        .then(data => window.location.replace(data.data.payment_url))
+                        .catch(error => console.log(error));
+                }
+
                 const logout = document.getElementById("logout")
 
                 document.addEventListener("DOMContentLoaded", function () {
@@ -226,7 +289,6 @@
                     getProfile()
                 });
             </script>
-
             <script>
                 const carts = document.getElementById("carts")
 
@@ -274,7 +336,7 @@
                                 cartDeleteDiv.classList.add("delete-button")
                                 cartDeleteDiv.setAttribute("bookIsbn", cart.book.isbn);
                                 const cartDeleteImage = document.createElement("img")
-                                cartDeleteImage.src = "/Book-Frontend/icons/delete.png"
+                                cartDeleteImage.src = "../Book-Frontend/icons/delete.png"
                                 cartDeleteDiv.appendChild(cartDeleteImage)
 
 
@@ -406,8 +468,96 @@
 
                 logout.addEventListener('click', handleLogout);
             </script>
+            <script>
+                const searchIcon = document.querySelector('.search-icon a');
+                const searchBar = document.querySelector('.search-bar');
 
+                searchIcon.addEventListener('click', () => {
+                    searchBar.classList.toggle('hidden');
+                });
+            </script>
+            <script>
+                const searchForm = document.querySelector("#search-form");
 
+                searchForm.addEventListener("submit", async function(e) {
+                    e.preventDefault();
+                    
+                    const searchValue = document.getElementById("search").value;
+                    const url = `http://localhost:5000/books/search?search_value=${encodeURIComponent(searchValue)}`;
+                    
+                    try {
+                        const response = await fetch(url, {
+                            method: 'GET',
+                            headers: {
+                                'Authorization': `Bearer ${localStorage.getItem('access_token')}`,
+                                'Content-Type': 'application/json',
+                            },
+                        });
+
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data.success) {
+                                searchedBooks = data.data;
+                                renderBooks();
+                            }
+                        } else {
+                            console.error("Error fetching data from the backend!");
+                        }
+                    } catch (error) {
+                        console.error(`Error: ${error}`);
+                    }
+                })
+            </script>
+            <script>
+                function renderBooks() {
+                    const renderPopularBooksDiv = document.getElementById('render_popular_books');
+                    renderPopularBooksDiv.innerHTML = '';
+
+                    searchedBooks.forEach(book => {
+                        const boxDiv = document.createElement('div');
+                        boxDiv.classList.add('box');
+
+                        const adDiv = document.createElement('div');
+                        adDiv.classList.add('ad');
+                        const bookImage = document.createElement('img');
+                        bookImage.src = book.image_url;
+                        bookImage.width = 350;
+                        bookImage.height = 300;
+                        bookImage.classList.add("book-image")
+                        adDiv.appendChild(bookImage);
+                        boxDiv.appendChild(adDiv);
+
+                        const h3 = document.createElement('h3');
+                        h3.textContent = book.name;
+                        boxDiv.appendChild(h3);
+
+                        const priceDiv = document.createElement('div');
+                        priceDiv.classList.add("price")
+                        priceDiv.textContent = `Rs. ${book.price}`;
+                        boxDiv.appendChild(priceDiv);
+
+                        const descriptionDiv = document.createElement('div');
+                        descriptionDiv.classList.add("description")
+                        descriptionDiv.textContent = book.description;
+                        boxDiv.appendChild(descriptionDiv);
+
+                        const btn = document.createElement('button');
+                        // btn.classList.add('books-btn', 'btn', 'btn-primary');
+                        const cartIcon = document.createElement('img');
+                        cartIcon.src = './icons/cart-2.svg';
+                        cartIcon.width = 25;
+                        const link = document.createElement('a');
+                        link.textContent = 'Add To Cart';
+                        link.href = `../Book-Frontend/cart.html?book-id=${book.isbn}`
+                        btn.appendChild(cartIcon);
+                        btn.appendChild(link);
+                        boxDiv.appendChild(btn);
+
+                        renderPopularBooksDiv.appendChild(boxDiv);
+                    });
+                }
+            </script>
+        </div>
+    </div>
 </body>
-
 </html>

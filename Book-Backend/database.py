@@ -1,8 +1,8 @@
-from pymongo import MongoClient
 from models import User
+from pymongo import MongoClient
 
 # MongoDB connection
-client = MongoClient("mongodb://localhost:27017/library")
+client = MongoClient("mongodb://localhost:27017")
 db = client["library"]
 
 # collections
